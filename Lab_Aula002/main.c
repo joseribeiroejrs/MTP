@@ -24,7 +24,10 @@ struct garagem{
     struct carro carros[100];
 }garagemEmpresario;
 
-float calculaMediaNotas(float notaMatematica, float notaPortugues, float notaGeografia){ //Calcula Media das 3 notas do Aluno
+float calculaMediaNotas(float notaMatematica,
+                            float notaPortugues,
+                            float notaGeografia)
+{ //Calcula Media das 3 notas do Aluno
     float media;
     media = (notaMatematica + notaPortugues + notaGeografia)/3;
     return media; //Retorna Media Calculada
@@ -34,6 +37,7 @@ void exercicio01(){
     int resposta,
         posicao = 0;
 
+    //Pega dados dos alunos
     do{
         int i = 0;
 
@@ -53,17 +57,16 @@ void exercicio01(){
         printf("Digite a NOTA do aluno %d em GEOGRAFIA\n", posicao + 1);
         scanf("%f", &alunos[posicao].notaGeografia);
 
-        alunos[posicao].media = calculaMediaNotas(alunos[posicao].notaMatematica, alunos[posicao].notaPortugues, alunos[posicao].notaGeografia);
+        alunos[posicao].media = calculaMediaNotas(alunos[posicao].notaMatematica,
+                                                  alunos[posicao].notaPortugues,
+                                                  alunos[posicao].notaGeografia);
 
         fflush(stdin);
-
         system("cls");
 
-        fflush(stdin);
-
-        if(posicao < 4){ //Porque a variavel posicao eh incrementada apenas no final da funcao
+        if(posicao < 4){ //A variavel posicao eh incrementada apenas no final da funcao
           resposta = 1;
-        }else{
+        }else{//quando for preenchido os 5 alunos, imprime os dados recolhidos
           printf("--------------------------------------\n");
           printf("-----------Dados dos ALUNOS-----------\n");
           printf("--------------------------------------\n");
@@ -89,6 +92,7 @@ void exercicio01(){
 
 void exercicio03(){
     int resposta;
+    //Pega dados da Garagem do Empresario
     do{
        system("cls");
        printf("--------------------------------------\n");
@@ -112,6 +116,7 @@ void exercicio03(){
        }while(carro1.novoOuNao != 1 && carro1.novoOuNao != 2);
 
        system("cls");
+       //Imprime dados da Garagem do Empresario
        printf("--------------------------------------\n");
        printf("------------Dados do VEICULO----------\n");
        printf("--------------------------------------\n");
